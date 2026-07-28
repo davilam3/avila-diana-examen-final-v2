@@ -2,12 +2,16 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const { getHomeResponse } = require("../server");
 
+const http = require('node:http');
+const { server } = require('../server.js');
+
 test("GET / responde correctamente", () => {
   const response = getHomeResponse();
 
   assert.equal(response.status, 201);
   assert.match(response.body, /Aplicación lista/);
 });
+
 
 test('GET / responde 200 con un mensaje y una version', async () => {
   await new Promise((resolve) => server.listen(0, resolve));
