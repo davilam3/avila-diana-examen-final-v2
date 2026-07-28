@@ -15,7 +15,7 @@ function requestHandler(req, res) {
     res.end(
       JSON.stringify({
         message: 'Hola desde la aplicación de ejemplo de la evaluación práctica',
-        app: 'app-ejemplo-evaluacion-v2-con-fallo',
+        app: APP_NAME,
         version: APP_VERSION,
       })
     );
@@ -52,5 +52,5 @@ if (require.main === module) {
   });
 }
 
-module.exports = { server, requestHandler, APP_NAME, APP_VERSION };
+module.exports = { server, requestHandler, 'app-ejemplo-evaluacion-v2-con-fallo': APP_NAME, '1.0.0': APP_VERSION };
 
