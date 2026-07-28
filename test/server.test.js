@@ -15,23 +15,6 @@ test("GET / responde correctamente", () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // test('GET / responde 200 con un mensaje y una version', async () => {
 //   await new Promise((resolve) => server.listen(0, resolve));
 //   const { port } = server.address();

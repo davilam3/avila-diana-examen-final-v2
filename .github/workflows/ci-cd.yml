@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: docker build -t app:${{ github.sha }} .
+      - run: docker build -t examen-final:latest .
+      - run: docker tag examen-final:latest registry/app:${{ github.sha }}
+      - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin registry
       - run: docker push registry/app:${{ github.sha }}
       - run: kubectl set image deployment/web-deployment web=registry/app:${{ github.sha }}
+
