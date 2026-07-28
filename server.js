@@ -25,8 +25,6 @@ function requestHandler(req, res) {
   res.end(JSON.stringify({ error: 'Ruta no encontrada' }));
 }
 
-const server = http.createServer(requestHandler);
-
 const server = http.createServer((req, res) => {
   if (req.method === "GET" && req.url === "/") {
     const response = getHomeResponse();
