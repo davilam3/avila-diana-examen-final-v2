@@ -29,3 +29,13 @@ if (require.main === module) {
 }
 
 module.exports = { server, message, getHomeResponse };
+
+if (require.main === module) {
+  const PORT = process.env.PORT || 8080;
+  server.listen(PORT, () => {
+    console.log(`${APP_NAME} escuchando en el puerto ${PORT}`);
+  });
+}
+
+module.exports = { server, requestHandler, APP_NAME, APP_VERSION };
+
