@@ -5,7 +5,7 @@ const message = "Aplicación lista";
 
 function getHomeResponse() {
   return {
-    status: 200,
+    status: 201,
     body: message
   };
 }
