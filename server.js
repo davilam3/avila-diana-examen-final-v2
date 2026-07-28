@@ -15,8 +15,8 @@ function requestHandler(req, res) {
     res.end(
       JSON.stringify({
         message: 'Hola desde la aplicación de ejemplo de la evaluación práctica',
-        app: APP_NAME,
-        version: APP_VERSION,
+        app: 'app-ejemplo-evaluacion-v2-con-fallo',
+        version: '1.0.0',
       })
     );
     return;
