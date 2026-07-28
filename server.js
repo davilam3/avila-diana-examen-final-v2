@@ -9,6 +9,23 @@ function getHomeResponse() {
     body: message
   };
 }
+function requestHandler(req, res) {
+  if (req.url === '/' || req.url === '/health') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(
+      JSON.stringify({
+        message: 'Hola desde la aplicación de ejemplo de la evaluación práctica',
+        app: APP_NAME,
+        version: APP_VERSION,
+      })
+    );
+    return;
+  }
+  res.writeHead(404, { 'Content-Type': 'application/json' });
+  res.end(JSON.stringify({ error: 'Ruta no encontrada' }));
+}
+
+const server = http.createServer(requestHandler);
 
 const server = http.createServer((req, res) => {
   if (req.method === "GET" && req.url === "/") {
